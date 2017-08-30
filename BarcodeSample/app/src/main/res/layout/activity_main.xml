@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.symbol.barcodesample.MainActivity">
+
+    <CheckBox
+        android:id="@+id/checkBoxCode128"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/checkBoxEAN13"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxEAN13"
+        android:checked="true"
+        android:text="Code128" />
+
+    <Spinner
+        android:id="@+id/spinnerScannerDevices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/checkBoxEAN13" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/spinnerScannerDevices"
+        android:text="Select Scanner:" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="@+id/buttonStopScan"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" >
+
+        <LinearLayout
+            android:layout_width="268dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textViewData"
+                android:layout_width="242dp"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:maxLines="100"
+                android:scrollHorizontally="false"
+                android:scrollbars="vertical" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewStatus"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStatus"
+        android:text="Data:" />
+
+    <Spinner
+        android:id="@+id/spinnerTriggers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/spinnerScannerDevices"
+        app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerScannerDevices"
+        android:text="Select Trigger Type:" />
+
+    <CheckBox
+        android:id="@+id/checkBoxEAN13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:layout_marginRight="50dp"
+        android:checked="true"
+        android:text="EAN13" />
+
+    <CheckBox
+        android:id="@+id/checkBoxContinuous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        android:text="Continuous" />
+
+    <CheckBox
+        android:id="@+id/checkBoxCode39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="@+id/textView1"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxEAN8"
+        android:checked="true"
+        android:text="Code39" />
+
+    <TextView
+        android:id="@+id/textViewStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/checkBoxContinuous"
+        app:layout_constraintTop_toBottomOf="@+id/buttonStartScan"
+        android:text="Status:" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/textView1"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerTriggers"
+        android:text="Set Decoders:" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/checkBoxContinuous"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxCode39"
+        android:text="Scan:" />
+
+    <CheckBox
+        android:id="@+id/checkBoxEAN8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxCode128"
+        app:layout_constraintLeft_toLeftOf="@+id/checkBoxCode39"
+        android:checked="true"
+        android:text="EAN8" />
+
+    <Button
+        android:id="@+id/buttonStartScan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxCode128"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toRightOf="@+id/textView4"
+        android:text="Start" />
+
+    <Button
+        android:id="@+id/buttonStopScan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxCode128"
+        app:layout_constraintLeft_toRightOf="@+id/buttonStartScan"
+        android:text="Stop" />
+
+</android.support.constraint.ConstraintLayout>
